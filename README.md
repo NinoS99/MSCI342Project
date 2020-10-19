@@ -24,5 +24,6 @@ Put in the following command into the terminal to start running the php file
 php -S localhost:8000
 
 Navigate to http://localhost:8000 on your browser.
+
 How to Connect Database Locally
 Replace the $dbhost variable so it looks like the following $dbhost = '$nameOfServer';
