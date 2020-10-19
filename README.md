@@ -1,7 +1,7 @@
 # MSCI342Project
 MSCI 342 Project 
 
-ow to Set up Environment
+How to Set up Environment
 Download git onto your computer.
 Open terminal and go to the path you want the repository to be stored. Use the following command:
 cd '<PATH_YOU_WANT_REPO>'
