@@ -5,7 +5,7 @@
         $dbhost = 'mansci-db.uwaterloo.ca';
         $dbuser = 'nspasik';
         $dbpassword = 'Fall@*%2020';
-        $dbname = 'study_buddy_tool';
+        $dbname = 'MSCI342_projectDB';
         $mysqli = new mysqli($dbhost, $dbuser, $dbpassword, $dbname);
         if ($mysqli->connect_errno)
         {
