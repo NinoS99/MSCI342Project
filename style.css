@@ -1,0 +1,15 @@
+body {
+    background: aliceblue no-repeat fixed center;
+}
+
+h1 {
+    font-family: Tahoma, Geneva, sans-serif;
+    text-align: center;
+    color: darkslategray;
+}
+
+h2 {
+    font-family: Tahoma, Geneva, sans-serif;
+    text-align: center;
+    color: slategray;
+}

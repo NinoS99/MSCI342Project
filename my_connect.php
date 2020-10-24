@@ -2,10 +2,10 @@
 // Function to obtain mysqli connection.
     function get_mysqli_conn()
     {
-        $dbhost = 'mansci-db.uwaterloo.ca';
+        $dbhost = 'localhost';
         $dbuser = 'nspasik';
         $dbpassword = 'Fall@*%2020';
-        $dbname = 'MSCI342_projectDB';
+        $dbname = 'nspasik';
         $mysqli = new mysqli($dbhost, $dbuser, $dbpassword, $dbname);
         if ($mysqli->connect_errno)
         {
