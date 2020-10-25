@@ -1,0 +1,127 @@
+<!--
+
+Group 6 Sprint #1 Credit Card Application Web Page
+Sunday October 25th 2020
+Create account page for MSCI442 Credit Card Application Project Sprint #1
+
+-->
+
+<html>
+	<!--Start head-->
+	<head>
+		<!--Create text styles-->
+        <style type = "text/css"> h1 {color:black}</style>
+		
+		<!--Import relevant style sheets-->
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+		
+	<!--End head-->
+	</head>
+	
+	<body>
+        
+           <!-- First section header-->
+         <div class="title_boxed">
+            <center>
+            </br><h1>Please enter in the required information to create an account!</h1></br>
+        </div>
+    
+        <!--Formatting the look of the section header-->
+        <style>
+            .wrapper {
+                text-align: center;
+            }
+            div.title_boxed {
+        background-color: #8FC9FF;
+            width: 900px;
+            height: 180px;
+            left: 402px;
+            top: 64.5px; 
+            margin-left: auto;
+            margin-right: auto;
+             width: 50%;
+        }
+        </style>
+        
+    <!-- Spacing between section header and fields-->
+    <span style="display:block; height: 50;"></span>
+    
+     <div class="wrapper1">
+         
+   <!-- Userform to aqcuire user information--> 
+ <form>
+     <!-- User creates their own numerical ID--> 
+     <label for ="id"> Create an numerical ID (1-999999):</label>
+     <input type = "number" required name = "id" size = "10" required min="1" required max="999999"></input><br>
+    <span style="display:block; height: 10;"></span>
+   
+         <!-- User enters first name--> 
+         <label for ="first_name">First Name:</label>
+     <input type = "text" required name = "first_name"></input><br>
+      <span style="display:block; height: 10;"></span>
+    
+    <!-- User enters last name--> 
+    <label for ="last_name">Last Name:</label>
+     <input type = "text" required name = "last_name"></input><br>
+      <span style="display:block; height: 10;"></span>
+   
+<!-- User enters their age --> 
+    <label for ="age">Age:</label>
+     <input type = "number" required name = "age" required min="18" required max="100"></input><br>
+    <span style="display:block; height: 10;"></span>
+  
+<!-- User selects if they're a student or not--> 
+<label for ="isAStudent">Are you a student?:</label> 
+<select name="isAStudent" required answer="yesorno">
+    <option value="yes">Yes</option>
+    <option value="no">No</option>
+  </select>
+    <span style="display:block; height: 10;"></span>
+    
+<!-- User enters their email -->
+<label for ="email">Email:</label>
+<input type="email" required name="email" size = "30">     
+<span style="display:block; height: 10;"></span>
+
+<!-- User enters their desired username -->
+     <label for ="userName"> Username:</label>
+     <input type = "text" required name = "userName"></input><br>
+    <span style="display:block; height: 10;"></span>
+
+<!-- User enters their desired password -->
+    <label for ="password">Password:</label>
+     <input type = "text" required name = "password"></input><br>
+    </form>
+
+<!-- spacing -->
+<span style="display:block; height: 20;"></span>
+
+<!-- User enters creates account is redirected to log back int -->
+<a href="login.html"><button class="button"> </br><h1>Create account</h1></br></button></a>
+      </div>
+
+<!-- User information is inserted into the databse -->
+<!-- 
+    INSERT CODE HERE
+                        -->
+
+<!--Formatting the look of the button-->
+<style>
+   .wrapper1 {
+    text-align: center;
+}
+       .button {
+  background-color: #DCF790;
+  border: none;
+  text-align: center;
+     width: 400px;
+     height: 100px;
+  font-size: 8px;
+           margin-right: 10;
+}
+        </style>
+
+	</body>
+	
+</html>
