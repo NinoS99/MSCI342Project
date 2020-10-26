@@ -2,15 +2,14 @@
 
   session_start();
   include_once("matchingMethod.php");
-  //include_once("surveyPage.php");
 
   $incomeRange = $_SESSION['incomeRange'];
   $rewardType = $_SESSION['rewardType'];
 
   print "<h2>$warningMessage</h2>";
-  $creditCard = getCreditCardSuggestion($incomeRange,$rewardType);
+  $creditCard = getCreditCardSuggestion($incomeRange,$rewardType); //Calls function that returns the credit card suggestion based on survey responses
+  echo "<h2> Thank you for using our program! Happy spending!";
   echo "<h2> The following credit card suits you best: ".$creditCard."";
-
 
  ?>
 
