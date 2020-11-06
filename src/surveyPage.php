@@ -1,10 +1,19 @@
 <?php
+  //
+  //  TODO:
+  //  ensure all fields are checked for the correct datatype if being input to database
+  //  update SQL queries to add all fields to DTB
+  //  Make field values not reset when "All Fields Required" error message displays
+  //  Make option based fields pull available options from database
+  //  HTML Formatting and Seperation of fields
+  //  May be more pls look and see - Jonathan
+  //
   session_start();
   include_once('../my_connect.php');
   //include_once('matchingMethod.php');
   if (isset($_POST["create"])){
     $mysqli = get_mysqli_conn();
-    $required = array('email','firstName', 'lastName','incomeRange','rewardType'); //Add remaining survey questions to array
+    $required = array('email','firstName', 'lastName','incomeRange','rewardType','student_bool','annualFee', 'prefferedInstitution'); //Add remaining survey questions to array
     $error = false;
     foreach($required as $field){
       if(empty($_POST[$field])){
@@ -19,13 +28,19 @@
       $firstName = $_POST['firstName'];
       $lastName = $_POST['lastName'];
       $incomeRange = $_POST['incomeRange'];
-      $rewardType =$_POST['rewardType'];
+      $rewardType = $_POST['rewardType'];
       $student = $_POST['student_bool'];
-      $creditScoreKnown =$_POST['creditScoreKnown'];
+      $creditScoreKnown = $_POST['creditScoreKnown'];
+      $creditScore = $_POST['creditScore'];
+      $annualFee = $_POST['annualFee'];
       //ADD REMAINING VARIABLES!
       //Create session variables for later use
       $_SESSION['incomeRange'] = $incomeRange;
       $_SESSION['rewardType'] = $rewardType;
+      $_SESSION['student'] = $student;
+      $_SESSION['creditScoreKnown'] = $creditScoreKnown;
+      $_SESSION['creditScore'] = $creditScore;
+      $_SESSION['annualFee'] = $annualFee;
       //Add session variables for remaining survey questions
       $sql = 'INSERT into users (first_name,last_name,income_range,reward_type)
               values ("'.$firstName.'","'.$lastName.'","'.$incomeRange.'","'.$rewardType.'")';  //Need to add email, confused how first, last inputs into full name in the DTB
@@ -102,16 +117,22 @@
         <option value='900'>800-900</option>
       </select>
             <br>
+            <br>
+       <label for = 'annualFee' > What is the maximum annual fee you are willing to incur? </label>
+          <input type = 'text' id = 'annualFee' name = 'annualFee' value="<?php
+          echo isset($_POST['annualFee']) ? $_POST['annualFee'] : '';
+          ?>">
+        <br>
 
-            <!--
-                Add:
-                  Max annual fee?
-                  Intrest Rate (s)
-                  Preffered Instituation (or cards you already have? Which would kinda tell you)
-
-            -->
-
-
+        <label for='prefferedInstitution' > What is your preffered institution/bank? </label>  <!-- Preffered Instituation (or cards you already have? Which would kinda tell you) - also options should pull from database -->
+        <select name='prefferedInstitution' id = 'prefferedInstitution'>
+          <option value='none'>none</option>
+          <option value='TD'>TD Bank</option>
+          <option value='Scotia'>ScotiaBank</option>
+          <option value='BMO'>BMO</option>
+          <option value='Simply'>SimplyFinancial</option>
+          <option value='Tangerine'>Tangerine</option>
+        </select>
 
 
               <h4>Thank you for inputting your info</h4>
