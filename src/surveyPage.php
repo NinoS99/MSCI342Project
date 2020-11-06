@@ -4,7 +4,7 @@
   //include_once('matchingMethod.php');
   if (isset($_POST["create"])){
     $mysqli = get_mysqli_conn();
-    $required = array('email','firstName', 'lastName','incomeRange','rewardType');
+    $required = array('email','firstName', 'lastName','incomeRange','rewardType'); //Add remaining survey questions to array
     $error = false;
     foreach($required as $field){
       if(empty($_POST[$field])){
@@ -20,12 +20,19 @@
       $lastName = $_POST['lastName'];
       $incomeRange = $_POST['incomeRange'];
       $rewardType =$_POST['rewardType'];
-       //Create session variables for later use
+      $student = $_POST['student_bool'];
+      $creditScoreKnown =$_POST['creditScoreKnown'];
+      //ADD REMAINING VARIABLES!
+      //Create session variables for later use
       $_SESSION['incomeRange'] = $incomeRange;
       $_SESSION['rewardType'] = $rewardType;
-      $sql = 'INSERT into users (first_name,last_name,income_range,reward_type) #Need to add email
-              values ("'.$firstName.'","'.$lastName.'","'.$incomeRange.'","'.$rewardType.'")';
+      //Add session variables for remaining survey questions
+      $sql = 'INSERT into users (first_name,last_name,income_range,reward_type)
+              values ("'.$firstName.'","'.$lastName.'","'.$incomeRange.'","'.$rewardType.'")';  //Need to add email, confused how first, last inputs into full name in the DTB
       $mysqli -> query($sql); //input query of customer details
+      //$sql = 'INSERT into userResponses (first_name,last_name,income_range,reward_type)
+      //        values ("'.$firstName.'","'.$lastName.'","'.$incomeRange.'","'.$rewardType.'")';
+      //$mysqli -> query($sql); //input query of user responses
       $warningMessage = "Survey Complete!";
       header("Location: submit.php");
     }
@@ -54,12 +61,19 @@
         <br>
           <br>
             <br>
-            
+
       <label for='incomeRange' > Income Range </label> <!-- Justify better and add positioning -->
       <select name='incomeRange' id = 'incomeRange'> <!-- Intake income range -->
         <option value='$0 - $30,000'>$0 to $30,000</option>
         <option value='$30,000 - $100,000'>$30,000 to $100,000</option>
         <option value='$100,000+'>$100,000 and Up</option>
+      </select>
+        <br>
+          <br>
+      <label for='student_bool' > Are you a student registered in a University or College? </label> <!-- -->
+      <select name='student_bool' id = 'student_bool'>
+        <option value='false'>no</option>
+        <option value='true'>yes</option>
       </select>
         <br>
           <br>
@@ -70,9 +84,38 @@
       </select>
         <br>
           <br>
+      <label for='averageMonthlySpending' > What is your average monthly spending? </label>  <!-- Intake reward type details -->
+      <select name='averageMonthlySpending' id = 'averageMonthlySpending'>
+        <option value='Points'>Points</option>
+        <option value='Cash Back'>Cash Back</option> <!--  Possibly make this a slider? -->
+      </select>
+        <br>
+          <br>
+      <label for='creditScoreKnown' > Do you know your credit score? </label>
+      <input type="checkbox" name="creditScoreKnown" value="true"> <!-- Can we make the value of this show the selection form below if the checkbox is true -->
+      <label for='What range is your credit score in?' > What range is your credit score in? </label>  <!-- Intake reward type details -->
+      <select name='creditScore' id = 'creditScore'>
+        <option value='200'>0-200</option>
+        <option value='400'>200-400</option>
+        <option value='600'>400-600</option>
+        <option value='800'>600-800</option>
+        <option value='900'>800-900</option>
+      </select>
             <br>
+
+            <!--
+                Add:
+                  Max annual fee?
+                  Intrest Rate (s)
+                  Preffered Instituation (or cards you already have? Which would kinda tell you)
+
+            -->
+
+
+
+
               <h4>Thank you for inputting your info</h4>
-          <button type = 'submit' name = 'create'>Submit Survey</button> <!--  Formatting of Submit survey button can improve -->
+      <button type = 'submit' name = 'create'>Submit Survey</button> <!--  Formatting of Submit survey button can improve -->
       </form>
 </html>
 
