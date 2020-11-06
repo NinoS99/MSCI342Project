@@ -63,8 +63,8 @@
         <br>
           <br>
             <br>
-              <h4>Thank you for inputting your info</h4>
           <button type = 'submit' name = 'create'>Submit Survey</button> <!--  Formatting of Submit survey button can improve -->
+          <h4>Please fill out all fields!</h4>
       </form>
 </html>
 
