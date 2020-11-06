@@ -4,7 +4,7 @@
   //include_once('matchingMethod.php');
   if (isset($_POST["create"])){
     $mysqli = get_mysqli_conn();
-    $required = array('firstName', 'lastName','incomeRange','rewardType');
+    $required = array('email','firstName', 'lastName','incomeRange','rewardType');
     $error = false;
     foreach($required as $field){
       if(empty($_POST[$field])){
@@ -15,6 +15,7 @@
       $warningMessage = "All fields are required.";
     }
     else {
+      $email = $_POST['email'];
       $firstName = $_POST['firstName'];
       $lastName = $_POST['lastName'];
       $incomeRange = $_POST['incomeRange'];
@@ -22,7 +23,7 @@
        //Create session variables for later use
       $_SESSION['incomeRange'] = $incomeRange;
       $_SESSION['rewardType'] = $rewardType;
-      $sql = 'INSERT into users (first_name,last_name,income_range,reward_type)
+      $sql = 'INSERT into users (first_name,last_name,income_range,reward_type) #Need to add email
               values ("'.$firstName.'","'.$lastName.'","'.$incomeRange.'","'.$rewardType.'")';
       $mysqli -> query($sql); //input query of customer details
       $warningMessage = "Survey Complete!";
@@ -34,6 +35,12 @@
     <link rel = 'stylesheet' type = 'text/css' href = 'style.css'>
     <h1>- User Survey - </h1>
       <form method="post" enctype="multipart/form-data">
+        <label for = 'email' > Email </label> <!-- Intake Customer First Name (maybe we should add more data/different customer details to intake -->
+        <input type = 'text' id = 'email' name = 'email' value="<?php
+        echo isset($_POST['email']) ? $_POST['email'] : '';
+        ?>">
+        <br>
+        <br>
         <label for = 'firstName' > First Name </label> <!-- Intake Customer First Name (maybe we should add more data/different customer details to intake -->
         <input type = 'text' id = 'firstName' name = 'firstName' value="<?php
         echo isset($_POST['firstName']) ? $_POST['firstName'] : '';
