@@ -54,6 +54,7 @@
         <br>
           <br>
             <br>
+                <br>
       <label for='incomeRange' > Income Range </label> <!-- Justify better and add positioning -->
       <select name='incomeRange' id = 'incomeRange'> <!-- Intake income range -->
         <option value='$0 - $30,000'>$0 to $30,000</option>
