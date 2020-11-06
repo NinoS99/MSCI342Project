@@ -33,6 +33,7 @@
       $creditScoreKnown = $_POST['creditScoreKnown'];
       $creditScore = $_POST['creditScore'];
       $annualFee = $_POST['annualFee'];
+      $prefferedInstitution = $_POST['prefferedInstitution'];
       //ADD REMAINING VARIABLES!
       //Create session variables for later use
       $_SESSION['incomeRange'] = $incomeRange;
