@@ -119,30 +119,8 @@
       </select>
             <br>
             <br>
-<<<<<<< HEAD
           <button type = 'submit' name = 'create'>Submit Survey</button> <!--  Formatting of Submit survey button can improve -->
           <h4>Please fill out all fields!</h4>
-=======
-       <label for = 'annualFee' > What is the maximum annual fee you are willing to incur? </label>
-          <input type = 'text' id = 'annualFee' name = 'annualFee' value="<?php
-          echo isset($_POST['annualFee']) ? $_POST['annualFee'] : '';
-          ?>">
-        <br>
-
-        <label for='prefferedInstitution' > What is your preffered institution/bank? </label>  <!-- Preffered Instituation (or cards you already have? Which would kinda tell you) - also options should pull from database -->
-        <select name='prefferedInstitution' id = 'prefferedInstitution'>
-          <option value='none'>none</option>
-          <option value='TD'>TD Bank</option>
-          <option value='Scotia'>ScotiaBank</option>
-          <option value='BMO'>BMO</option>
-          <option value='Simply'>SimplyFinancial</option>
-          <option value='Tangerine'>Tangerine</option>
-        </select>
-
-
-              <h4>Thank you for inputting your info</h4>
-      <button type = 'submit' name = 'create'>Submit Survey</button> <!--  Formatting of Submit survey button can improve -->
->>>>>>> 631686cb419a4c4b7daa8396bc64af05cf594d67
       </form>
 </html>
 
