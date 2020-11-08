@@ -1,3 +1,5 @@
+<?php
+?>
 <html>
     <head>
     <!--Create text styles-->
@@ -15,21 +17,20 @@
             </br><h1>CreditSimple Knowledge Base</h1></br>
         </div>
     
-<!--Show user how credit cards works-->
+<!--List major credit card companies with corresponding photos-->
     <center>   
-    <h2> Credit cards are a common way to pay for almost anything around the world.</h2> <br> 
-    <h2> When you pay for something with a credit card, you are paying using "credit."</h2> <br> 
-    <h2> The assumption is you will pay back the bank/corporation that owns the card on a future date. </h2> <br>
-    
-    <div class="wrapper">
-      <a href="knowledgeBase.html"><button class="buttonReturn"></br><h1>Return to CreditSimple Knowledge Base</h1></br></button></a>
+    <h2> Below are the top three major credit card companies in the world!</h2> <br>
+    <br> <img src="visa.jpg"> 
+    <img src="mastercard.jpg" style="width:394px;height:222px;">
+    <img src="amex.jpeg" style="width:394px;height:222px;">
+      
+<!--Button to allow user to go back to the knowledge base page-->
+    <div>
+      <a href="knowledgeBase.php"><button class="buttonReturn"></br><h1>Return to CreditSimple Knowledge Base</h1></br></button></a>
     </div>
 
-<!--Formatting the look of the buttons-->
+<!--Formatting the look of the title block and return button-->
 <style>
-   .wrapper {
-    text-align: center;
-}
    div.title {
          background-color: #8FC9FF;
          width: 658px;
@@ -47,11 +48,10 @@
         text-align: center;
         width: 400px;
         height: 150px;
-        margin:40px auto;
+        margin:30px auto;
     }
 </style>
     
     <body>
-
 
 </html>
