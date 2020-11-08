@@ -1,12 +1,6 @@
-<!--
-
-Group 6 Sprint #1 Credit Card Application Web Page
-Sunday October 25th 2020
-Landing/Homepage page for MSCI442 Credit Card Application Project Sprint #1
-
--->
 <?php
 ?>
+
 <html>
 	<!--Start head-->
 	<head>
@@ -48,7 +42,7 @@ Landing/Homepage page for MSCI442 Credit Card Application Project Sprint #1
    
     <!--Creating the button to the login page-->
     <div class="wrapper">
-      <a href="login.html"><button class="buttonSurvey"></br><h1>Click here to find your ideal credit card!</h1></br></button></a>
+      <a href="src/surveyPage.php"><button class="buttonSurvey"></br><h1>Click here to find your ideal credit card!</h1></br></button></a>
     </div>
 
     <!--Creating the button to the KnowledgeBase-->
@@ -68,12 +62,11 @@ Landing/Homepage page for MSCI442 Credit Card Application Project Sprint #1
         width: 469px;
         height: 142px;
         left: 0px;
-        top: 370px;    
+        top: 370px;
         font-size: 10px;
         float: left;
         margin-left: 15px;
-}
-
+    }
     .buttonKnowledgeBase {
         background-color: #DCF790;
         border: none;
@@ -81,7 +74,7 @@ Landing/Homepage page for MSCI442 Credit Card Application Project Sprint #1
         width: 469px;
         height: 142px;
         left: 0px;
-        top: 370px;    
+        top: 370px;
         font-size: 10px;
         float: right;
         margin-right: 15px;
