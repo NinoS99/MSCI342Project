@@ -31,7 +31,7 @@
       $rewardType = $_POST['rewardType'];
       $student = $_POST['student_bool'];
       $averageMonthlySpending = $_POST['averageMonthlySpending'];
-      $creditScoreKnown = $_POST['creditScoreKnown'];
+      //$creditScoreKnown = $_POST['creditScoreKnown'];
       $creditScore = $_POST['creditScore'];
       $annualFee = $_POST['annualFee'];
       $prefferedInstitution = $_POST['prefferedInstitution'];
@@ -41,7 +41,7 @@
       $_SESSION['rewardType'] = $rewardType;
       $_SESSION['student'] = $student;
       $_SESSION['averageMonthlySpending'] = $averageMonthlySpending;
-      $_SESSION['creditScoreKnown'] = $creditScoreKnown;
+      //$_SESSION['creditScoreKnown'] = $creditScoreKnown;
       $_SESSION['creditScore'] = $creditScore;
       $_SESSION['annualFee'] = $annualFee;
       $_SESSION['prefferedInstitution'] = $prefferedInstitution;
@@ -111,17 +111,18 @@
       <label for='rewardType' > Reward Type </label>  <!-- Intake reward type details -->
       <select name='rewardType' id = 'rewardType'>
         <option value='Points'>Points</option>
-        <option value='Cash Back'>Cash Back</option> <!--  Mabybe list should be generated from the database -->
+        <option value='Cash Back'>Cash Back</option>
+        <option value='Travel'>Travel</option> <!--  Mabybe list should be generated from the database -->
       </select>
         <br>
           <br>
       <label for='averageMonthlySpending' > What is your average monthly spending? </label>  <!-- Intake reward type details -->
       <select name='averageMonthlySpending' id = 'averageMonthlySpending'>
-        <option value='0-500'>0-500</option>
-        <option value='500-1000'>500-1000</option>
-        <option value='1000-2000'>1000-2000</option>
-        <option value='2000-5000'>2000-5000</option>
-        <option value='5000+'>5000+</option><!--  Possibly make this a slider? -->
+        <option value='$0 - $500'>$0 - $500</option>
+        <option value='$500 - $1000'>$500 - $1000</option>
+        <option value='$1000 - $2000'>$1000 - $2000</option>
+        <option value='$2000 - $5000'>$2000 - $5000</option>
+        <option value='$5000+'>$5000 and Up</option><!--  Possibly make this a slider? -->
       </select>
         <br>
           <br>
@@ -129,16 +130,32 @@
       <input type='checkbox' id='creditscoreKnown' name='creditScoreKnown' value='true' onclick='changeStatus(this)'/> <!-- Can we make the value of this show the selection form below if the checkbox is true -->
       <label for='What range is your credit score in?' > What range is your credit score in? </label>  <!-- Intake reward type details -->
       <select name='creditScore' id='creditScore'>//disabled='disabled'
-        <option value='0-200'>0-200</option>
-        <option value='200-400'>200-400</option>
-        <option value='400-600'>400-600</option>
-        <option value='600-800'>600-800</option>
-        <option value='800-900'>800-900</option>
+        <option value='0 - 200'>0 - 200</option>
+        <option value='200 - 400'>200 - 400</option>
+        <option value='400 - 600'>400 - 600</option>
+        <option value='600 - 800'>600 - 800</option>
+        <option value='800 - 900'>800 - 900</option>
       </select>
+          <br>
             <br>
+       <label for = 'annualFee' > What is the maximum annual fee you are willing to incur? </label>
+          <input type = 'text' id = 'annualFee' name = 'annualFee' value="<?php
+          echo isset($_POST['annualFee']) ? $_POST['annualFee'] : '';
+          ?>">
+          <br>
             <br>
-          <button type = 'submit' name = 'create'>Submit Survey</button> <!--  Formatting of Submit survey button can improve -->
-          <h4>Please fill out all fields!</h4>
+        <label for='prefferedInstitution' > What is your preffered institution/bank? </label>  <!-- Preffered Instituation (or cards you already have? Which would kinda tell you) - also options should pull from database -->
+        <select name='prefferedInstitution' id = 'prefferedInstitution'>
+          <option value='none'>none</option>
+          <option value='TD Canada'>TD Canada</option>
+          <option value='ScotiaBank'>ScotiaBank</option>
+          <option value='BMO'>BMO</option>
+          <option value='CIBC'>CIBC</option>
+          <option value='Libro'>Libro</option>
+        </select>
+          <br>
+            <br>
+      <button type = 'submit' name = 'create'>Submit Survey</button> <!--  Formatting of Submit survey button can improve -->
       </form>
 </html>
 
