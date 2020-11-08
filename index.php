@@ -1,3 +1,4 @@
+
 <?php
 ?>
 
@@ -6,22 +7,22 @@
 	<head>
 		<!--Create text styles-->
         <style type = "text/css"> h1 {color:black}</style>
-		
+
 		<!--Import relevant style sheets-->
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-		
+
 	<!--End head-->
 	</head>
-	
+
 	<body>
-        
+
            <!-- First section header-->
          <div class="titlebox">
             <center>
             </br><h1>Welcome to CreditSimple!</h1></br>
         </div>
-       
+
     <!--Formatting the look of the titlebox-->
     <style>
         div.titlebox {
@@ -29,17 +30,17 @@
             width: 658px;
             height: 119px;
             left: 402px;
-            top: 64.5px; 
+            top: 64.5px;
             font-size: 16px;
             margin-left: auto;
             margin-right: auto;
              width: 50%;
         }
         </style>
-        
+
         <!-- Spacing between titlebox and button-->
     <span style="display:block; height: 150;"></span>
-   
+
     <!--Creating the button to the login page-->
     <div class="wrapper">
       <a href="src/surveyPage.php"><button class="buttonSurvey"></br><h1>Click here to find your ideal credit card!</h1></br></button></a>
@@ -82,5 +83,5 @@
 </style>
 
 	</body>
-	
+
 </html>
