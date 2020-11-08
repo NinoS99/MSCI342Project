@@ -13,3 +13,15 @@ h2 {
     text-align: center;
     color: slategray;
 }
+
+h3 {
+    font-family: Tahoma, Geneva, sans-serif;
+    color: slategray;
+    text-align: left; 
+}
+
+h5 {
+    font-family: Tahome, Geneva, sans-serif;
+    color: slategray; 
+    text-align: left;
+}
