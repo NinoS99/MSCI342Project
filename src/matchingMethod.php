@@ -4,12 +4,12 @@
 
 $creditCard = '';
 
-      if($prefferedInstitution == 'none'){
-          $creditCard = noInstitutionPreferenceQueries($incomeRange, $rewardType, $student, $averageMonthlySpending, $annualFee, $creditScore);
+      if($prefferedInstitution == "none"){
+          $creditCardArray = noInstitutionPreferenceQueries($incomeRange, $rewardType, $student, $averageMonthlySpending, $annualFee, $creditScore);
       } else {
         $creditCardArray = institutionPreferenceQueries($incomeRange, $rewardType, $student, $averageMonthlySpending, $annualFee, $creditScore, $prefferedInstitution);
-        if(empty($creditCard)){
-          $creditCard = noInstitutionPreferenceQueries($incomeRange, $rewardType, $student, $averageMonthlySpending, $annualFee, $creditScore);
+        if(empty($creditCardArray)){
+          $creditCardArray = noInstitutionPreferenceQueries($incomeRange, $rewardType, $student, $averageMonthlySpending, $annualFee, $creditScore);
         }
       }
 
@@ -41,7 +41,7 @@ $creditCard = '';
         $results = mysqli_query($mysqli, $sql);
         while($rows = $results->fetch_assoc()){
           $creditCard = $rows['credit_card_name'];
-          $creditCardArray[] = $creditCard;
+          array_push($creditCardArray, $creditCard);
         }
 
           if(empty($creditCardArray)){
@@ -53,7 +53,7 @@ $creditCard = '';
             $results = mysqli_query($mysqli, $sql);
             while($rows = $results->fetch_assoc()){
               $creditCard = $rows['credit_card_name'];
-              $creditCardArray[] = $creditCard;
+              array_push($creditCardArray, $creditCard);
             }
 
             if(empty($creditCardArray)){
@@ -65,13 +65,13 @@ $creditCard = '';
               $results = mysqli_query($mysqli, $sql);
               while($rows = $results->fetch_assoc()){
                 $creditCard = $rows['credit_card_name'];
-                $creditCardArray[] = $creditCard;
+                array_push($creditCardArray, $creditCard);
               }
           }
         }
       }
 
-      return $creditCard;
+      return $creditCardArray;
   }
 
     function institutionPreferenceQueries($incomeRange, $rewardType, $student, $averageMonthlySpending, $annualFee, $creditScore, $prefferedInstitution){
@@ -97,7 +97,7 @@ $creditCard = '';
           $results = mysqli_query($mysqli, $sql);
           while($rows = $results->fetch_assoc()){
             $creditCard = $rows['credit_card_name'];
-            $creditCardArray[] = $creditCard;
+            array_push($creditCardArray, $creditCard);
           }
 
             if(empty($creditCardArray)){
@@ -109,7 +109,7 @@ $creditCard = '';
               $results = mysqli_query($mysqli, $sql);
               while($rows = $results->fetch_assoc()){
                 $creditCard = $rows['credit_card_name'];
-                $creditCardArray[] = $creditCard;
+                array_push($creditCardArray, $creditCard);
               }
 
               if(empty($creditCardArray)){
@@ -121,7 +121,7 @@ $creditCard = '';
                 $results = mysqli_query($mysqli, $sql);
                 while($rows = $results->fetch_assoc()){
                   $creditCard = $rows['credit_card_name'];
-                  $creditCardArray[] = $creditCard;
+                  array_push($creditCardArray, $creditCard);
                 }
             }
           }
