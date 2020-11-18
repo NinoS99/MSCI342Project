@@ -26,11 +26,12 @@
     
 <!--Button to allow user to go back to different pages on the knowledge base or return to homepage-->
     <div class="wrapper">
-      <a href="howCreditCardsworks.php"><button class="buttonHCCW"><h1>How Credit Cards Work</h1></button></a>
-      <a href="creditCardCompanies.php"><button class="buttonCCC"><h1>Credit Card Companies </h1></button></a>
-      <a href="typesOfCreditCards.php"><button class="buttonTOCC"><h1>Types of Credit Cards</h1></button></a>
-      <a href="creditCardFees.php"><button class="buttonCCF"><h1>Types of Fees</h1></button></a>
-      <a href="creditCardApplications.php"><button class="buttonCCA"><h1>Credit Card Applications</h1></button></a>
+      <a href="howCreditCardsworks.php"><button class="buttonKB"><h2>How Credit Cards Work</h2></button></a>
+      <a href="creditCardCompanies.php"><button class="buttonKB"><h2>Credit Card Companies </h2></button></a>
+      <a href="typesOfCreditCards.php"><button class="buttonKB"><h2>Types of Credit Cards</h2></button></a>
+      <a href="creditCardFees.php"><button class="buttonKB"><h2>Types of Fees</h2></button></a>
+      <a href="creditCardApplications.php"><button class="buttonKB"><h2>How Applications Work</h2></button></a>
+      <a href="creditCardRewardPrograms.php"><button class="buttonKB"><h2>Reward Programs</h2></button></a>
       <a href="index.php"><button class="buttonReturn"><h1>Return to Homepage</h1></button></a>
     </div>
 
@@ -50,46 +51,14 @@
          width: 50%;
         }
     
-    .buttonHCCW {
+    .buttonKB {
         background-color: #DCF790;
         border: none;
         text-align: center;
         width: 400px;
         height: 100px;
-       margin:120px auto;
+       margin:20px auto;
     }
-    
-    .buttonCCC {
-        background-color: #DCF790;
-        border: none;
-        text-align: center;
-        width: 400px;
-        height: 100px;
-        margin:120px auto;
-    }
-    .buttonTOCC {
-        background-color: #DCF790;
-        border: none;
-        text-align: center;
-        width: 400px;
-        height: 100px;
-        margin:120px auto; 
-    }
-     .buttonCCF {
-        background-color: #DCF790;
-        border: none;
-        text-align: center;
-        width: 400px;
-        height: 100px;
-    }
-     .buttonCCA {
-        background-color: #DCF790;
-        border: none;
-        text-align: center;
-        width: 400px;
-        height: 100px;
-    }
-    
     .buttonReturn {
         background-color: #EA7E77;
         border: none;
