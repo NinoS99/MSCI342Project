@@ -26,7 +26,7 @@
         </div>
     
 <!--Outline of credit card annual fees-->
-   <br> <h3> Annual Fees </h3>
+   <h3> Annual Fees </h3>
    <h5> Annual fees are a yearly charge for the benefit of using a credit card. Many cards (specifically rewards cards) come with an annual fee. The amount reflects the benefits you will receive (such as travel points and cash back offers) for using the card. Even if you don’t use the card once during the year, this fee still applies. Annual fees typically range from $20-120, but can be more or less. As a credit card’s benefits increase, however, so does its fee. </h5>
 
 <!--Outline of credit card authorized user fees-->

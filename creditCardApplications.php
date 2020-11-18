@@ -29,7 +29,7 @@
         </div>
     
 <!--Outline of credit card application requirements-->
- <br> <h3> Applications Requirements </h3>
+ <h3> Applications Requirements </h3>
    <h5> Submitting a credit card application is your way of requesting access to credit. The main risk to a credit card issuer is that they will lend money you cannot/will not pay back. For this reason, applying for a credit card requires that you demonstrate to the card issuer (lender) you are a responsible and capable borrower. Below is some of the information you will need to provide: </h5>
 <!--List of requirements-->
     <ul>
