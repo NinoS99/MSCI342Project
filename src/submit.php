@@ -62,7 +62,7 @@
         
     <a href="../src/allCards.php">
       <div>
-        <h2> Click here to see all the other credit cards choices in application!</h2>
+        <h2> Click here to see a list of other credit cards available in the application!</h2>
       </div>
     </a>
         
