@@ -11,16 +11,14 @@
   $annualFee = $_SESSION['annualFee'];
   $creditScore = $_SESSION['creditScore'];
   $prefferedInstitution = $_SESSION['prefferedInstitution'];
-  $creditCardArray = getCreditCardSuggestion($incomeRange,$rewardType, $student, $averageMonthlySpending, $annualFee, $creditScore, $prefferedInstitution); //Calls function that returns the credit card suggestion based on survey responses
-
-  $creditCardName = array_pop(array_reverse($creditCardArray));
-  //$creditCardName = $creditCardArray; 
-      //as &$value;
+  //Calls function that returns the credit card suggestion based on survey responses
+  $creditCardArray = getCreditCardSuggestion($incomeRange,$rewardType, $student, $averageMonthlySpending, $annualFee, $creditScore, $prefferedInstitution); 
 
   // Code to export user's results to excel
+  $creditCardName = array_pop(array_reverse($creditCardArray));
   include 'DBController.php';
   $db_handle = new DBController();
-  $productResult = $db_handle->runQuery("select credit_card_company, credit_card_name, card_network, incomeRange,  reward_type, student, averageMonthlySpendingRange, creditScoreRange,  annualFee from credit_cards where credit_card_name = '{$creditCardName}' "); // where credit_card name '{$creditCard}'
+  $productResult = $db_handle->runQuery("select credit_card_company, credit_card_name, card_network, incomeRange,  reward_type, student, averageMonthlySpendingRange, creditScoreRange,  annualFee from credit_cards where credit_card_name = '{$creditCardName}' "); 
 
   if (isset($_POST["export"])) {
       $filename = "CreditCardInformation.xls";
