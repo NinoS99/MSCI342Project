@@ -57,6 +57,10 @@
       header("Location: submit.php");
     }
   }
+
+  if (isset($_POST["homePage"])){
+      header("Location: ../index.php");
+    }
   ?>
   <html>
 <head>
@@ -220,12 +224,11 @@
           <br>
             <br>
       <button type = 'submit' name = 'create'>Submit Survey</button> <!--  Formatting of Submit survey button can improve -->
+      <button type = 'submit' name = 'homePage'>Return to Home Page</button>
 
       </form>
     </center>
 </html>
 
 <?php print "<h2>$warningMessage</h2>";
-  //$creditCard = getCreditCardSuggestion($incomeRange,$rewardType);
-  //echo "<h2> The following credit card suits you best: ".$creditCard."";
 ?>
