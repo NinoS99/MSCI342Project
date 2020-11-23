@@ -1,3 +1,7 @@
+<!-- This is functioning but we need to make it a list, and will need to develop a method for sorting and filtering the results
+    The page is also not looking pretty or well formatted.
+
+-->
 <?php
 
   session_start();
