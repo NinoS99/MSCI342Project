@@ -1,4 +1,5 @@
-<?php?>
+<?php
+?>
 <html>
 	<!--Start head-->
 	<head>
