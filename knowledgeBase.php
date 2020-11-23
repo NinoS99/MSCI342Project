@@ -1,6 +1,5 @@
 <?php
 ?>
-
 <html>
     <head>
         <!--Bootstrap CDN-->
@@ -10,6 +9,18 @@
 
         <!--Link CSS file-->
         <link rel="stylesheet" href="style.css">
+
+
+
+        <!--Create text styles-->
+        <style type = "text/css"> h1 {color:black}</style>
+        <style type = "text/css"> h2 {color:black}</style>
+        
+		<!--Import relevant style sheets-->
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+		
+        
 
 	<!--End head-->
     </head>
@@ -25,6 +36,7 @@
         </div>
 
 <!--Button to allow user to go back to different pages on the knowledge base or return to homepage-->
+
     <div class="wrapper">
       <a href="howCreditCardsworks.php"><button class="buttonHCCW"><h1>How Credit Cards Work</h1></button></a>
       <a href="creditCardCompanies.php"><button class="buttonCCC"><h1>Credit Card Companies </h1></button></a>
@@ -33,6 +45,40 @@
       <a href="creditCardApplications.php"><button class="buttonCCA"><h1>Credit Card Applications</h1></button></a>
       <a href="index.php"><button class="buttonReturn"><h1>Return to Homepage</h1></button></a>
     </div>
+=======<div class="wrapper">
+    <div class="row">
+        <div class="col-sm-6">
+            <a href="howCreditCardsworks.php"><button class="btn btn-success btn-lg"></br><h2>How Credit Cards Work</h2></br></button></a>
+        </div>
+        <div class="col-sm-6">
+            <a href="creditCardCompanies.php"><button class="btn btn-success btn-lg"></br><h2>Credit Card Companies</h2></br></button></a>
+        </div>
+    </div>    
+    <br>
+    <div class="row">
+        <div class="col-sm-6">
+            <a href="typesOfCreditCards.php"><button class="btn btn-success btn-lg"></br><h2>Types of Credit Cards</h2></br></button></a>
+        </div>
+        <div class="col-sm-6">
+            <a href="creditCardFees.php"><button class="btn btn-success btn-lg"></br><h2>Types of Fees</h2></br></button></a>
+        </div>
+    </div>  
+    <br>
+    <div class="row">
+        <div class="col-sm-6">
+            <a href="creditCardApplications.php"><button class="btn btn-success btn-lg"></br><h2>How Applications Work</h2></br></button></a>
+        </div>
+        <div class="col-sm-6">
+            <a href="creditCardRewardPrograms.php"><button class="btn btn-success btn-lg"></br><h2>Reward Programs</h2></br></button></a>
+        </div>
+    </div>  
+    <br>
+    <div class="row">
+        <div class="col-sm-12">
+            <a href="index.php"><button class="btn btn-danger btn-lg"></br><h2>Return to Homepage</h2></br></button></a>
+        </div>
+</div>
+
 
 <!--Formatting the look of the title block and buttons created above-->
 <style>
@@ -49,6 +95,7 @@
          margin-right: auto;
          width: 50%;
         }
+
 
     .buttonHCCW {
         background-color: #DCF790;
@@ -97,6 +144,7 @@
         width: 400px;
         height: 100px;
     }
+
 </style>
 
     <body>
