@@ -8,13 +8,15 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
         
         <!--Link CSS file-->
-        <link rel="stylesheet" href="style.css">    
-    
+        <link rel="stylesheet" href="style.css">
+
         <!--Create text styles-->
-		<link rel = 'stylesheet' type = 'text/css' href = 'style.css'>
+        <style type = "text/css"> h1 {color:black}</style>
+        <style type = "text/css"> h2 {color:black}</style>
+        
 		<!--Import relevant style sheets-->
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">	
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 	<!--End head-->
     </head>
 
@@ -69,8 +71,12 @@
     <h5> If you have been successfully approved, congratulations! A new credit card will be mailed to the address specified on your application. Once you've received your card, you must call the toll-free number on the back of the card to activate and start using it. </h5>
     
     <!--Button to allow user to go back to the knowledge base page-->
-    <div>
-      <a href="knowledgeBase.php"><button class="buttonReturn"></br><h1>Return to CreditSimple Knowledge Base</h1></br></button></a>
+    <div class="wrapper">
+        <div class="row">
+            <div class="col-sm-12">
+                <a href="knowledgeBase.php"><button class="btn btn-danger btn-lg"></br><h2>Return to CreditSimple Knowledge Base</h2></br></button></a>
+            </div>
+        </div>
     </div>
 
 <!--Formatting the look of the title block and return button-->
@@ -85,13 +91,8 @@
          margin-right: auto;
         }
     
-    .buttonReturn {
-        background-color: #EA7E77;
-        border: none;
+    .wrapper {
         text-align: center;
-        width: 400px;
-        height: 150px;
-        margin-left: 600px;
     }
 </style>
     
