@@ -28,7 +28,6 @@
         
         <!-- Jumbotron titlebox-->
         <div class = "jumbotron">
-            <center>
             <h1 class="text-primary">
             <p class="display-3">Welcome to CreditSimple!</p>
             <small class="text-muted">Your virtual credit card advisor</small>

@@ -1,5 +1,3 @@
-<?php
-?>
 
 <html>
     <head>
@@ -10,6 +8,15 @@
         
         <!--Link CSS file-->
         <link rel="stylesheet" href="style.css">
+
+        <!--Create text styles-->
+        <style type = "text/css"> h1 {color:black}</style>
+        <style type = "text/css"> h2 {color:black}</style>
+        
+		<!--Import relevant style sheets-->
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+		
         
 	<!--End head-->
     </head>
@@ -25,15 +32,40 @@
         </div>
     
 <!--Button to allow user to go back to different pages on the knowledge base or return to homepage-->
-    <div class="wrapper">
-      <a href="howCreditCardsworks.php"><button class="buttonKB"><h2>How Credit Cards Work</h2></button></a>
-      <a href="creditCardCompanies.php"><button class="buttonKB"><h2>Credit Card Companies </h2></button></a>
-      <a href="typesOfCreditCards.php"><button class="buttonKB"><h2>Types of Credit Cards</h2></button></a>
-      <a href="creditCardFees.php"><button class="buttonKB"><h2>Types of Fees</h2></button></a>
-      <a href="creditCardApplications.php"><button class="buttonKB"><h2>How Applications Work</h2></button></a>
-      <a href="creditCardRewardPrograms.php"><button class="buttonKB"><h2>Reward Programs</h2></button></a>
-      <a href="index.php"><button class="buttonReturn"><h1>Return to Homepage</h1></button></a>
-    </div>
+<div class="wrapper">
+    <div class="row">
+        <div class="col-sm-6">
+            <a href="howCreditCardsworks.php"><button class="btn btn-success btn-lg"></br><h2>How Credit Cards Work</h2></br></button></a>
+        </div>
+        <div class="col-sm-6">
+            <a href="creditCardCompanies.php"><button class="btn btn-success btn-lg"></br><h2>Credit Card Companies</h2></br></button></a>
+        </div>
+    </div>    
+    <br>
+    <div class="row">
+        <div class="col-sm-6">
+            <a href="typesOfCreditCards.php"><button class="btn btn-success btn-lg"></br><h2>Types of Credit Cards</h2></br></button></a>
+        </div>
+        <div class="col-sm-6">
+            <a href="creditCardFees.php"><button class="btn btn-success btn-lg"></br><h2>Types of Fees</h2></br></button></a>
+        </div>
+    </div>  
+    <br>
+    <div class="row">
+        <div class="col-sm-6">
+            <a href="creditCardApplications.php"><button class="btn btn-success btn-lg"></br><h2>How Applications Work</h2></br></button></a>
+        </div>
+        <div class="col-sm-6">
+            <a href="creditCardRewardPrograms.php"><button class="btn btn-success btn-lg"></br><h2>Reward Programs</h2></br></button></a>
+        </div>
+    </div>  
+    <br>
+    <div class="row">
+        <div class="col-sm-12">
+            <a href="index.php"><button class="btn btn-danger btn-lg"></br><h2>Return to Homepage</h2></br></button></a>
+        </div>
+</div>
+
 
 <!--Formatting the look of the title block and buttons created above-->
 <style>
@@ -50,22 +82,7 @@
          margin-right: auto;
          width: 50%;
         }
-    
-    .buttonKB {
-        background-color: #DCF790;
-        border: none;
-        text-align: center;
-        width: 400px;
-        height: 100px;
-       margin:20px auto;
-    }
-    .buttonReturn {
-        background-color: #EA7E77;
-        border: none;
-        text-align: center;
-        width: 400px;
-        height: 100px;
-    }
+
 </style>
     
     <body>
