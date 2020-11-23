@@ -60,19 +60,43 @@
   ?>
   <html>
 <head>
+
+
+  <head>
+     <!--Bootstrap CDN-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+      <!--Create text styles-->
+      <link rel = 'stylesheet' type = 'text/css' href = 'style.css'>
+      <!--Import relevant style sheets-->
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+    <!--End head-->
+  </head>
+
   <script>
   function changeStatus(creditscoreKnown) //as per Jon's request, changes the visibility of the credit score dropdown
-  {
-    var status = document.getElementbyID('creditScore');
-    status.disabled=creditscoreKnown.checked ? false : true;
-    if(!status.disabled){
-      status.focus();
+    {
+      var status = document.getElementbyID('creditScore');
+      status.disabled=creditscoreKnown.checked ? false : true;
+      if(!status.disabled){
+        status.focus();
+      }
     }
-  }
   </script>
+
 </head>
+<center>
     <link rel = 'stylesheet' type = 'text/css' href = 'style.css'>
-    <h1>- User Survey - </h1>
+    <div class = "jumbotron">
+        <h1>- User Survey - </h1>
+      </div>
+    <br>
+    <br>
+
       <form method="post" enctype="multipart/form-data">
         <label for = 'email' > Email </label> <!-- Intake Customer Email  -->
         <input type = 'email' id = 'email' name = 'email' value="<?php
@@ -90,6 +114,7 @@
         <input type = 'text' id = 'lastName' name = 'lastName' maxlength="30" value="<?php
         echo isset($_POST['lastName']) ? $_POST['lastName'] : '';
         ?>">
+
         <br>
           <br>
             <br>
@@ -195,22 +220,9 @@
           <br>
             <br>
       <button type = 'submit' name = 'create'>Submit Survey</button> <!--  Formatting of Submit survey button can improve -->
-      <style>
-              .container {
-                height: 200px;
-                position: relative;
-                border: 3px solid green;
-              }
 
-              .vertical-center {
-                margin: 0;
-                position: absolute;
-                top: 50%;
-                -ms-transform: translateY(-50%);
-                transform: translateY(-50%);
-              }
-        </style>
       </form>
+    </center>
 </html>
 
 <?php print "<h2>$warningMessage</h2>";
