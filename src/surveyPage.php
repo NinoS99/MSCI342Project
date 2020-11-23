@@ -94,40 +94,39 @@
 
 </head>
 <center>
-    <link rel = 'stylesheet' type = 'text/css' href = 'style.css'>
-    <div class = "jumbotron">
-        <h1>- User Survey - </h1>
-      </div>
-    <br>
+
+       <!-- Jumbotron titlebox-->
+        <div class = "jumbotron">
+            <h1 class="text-primary">
+            <p class="display-3">- User Survey - </p>
+            </h1>
+        </div>
     <br>
 
       <form method="post" enctype="multipart/form-data">
-        <label for = 'email' > Email </label> <!-- Intake Customer Email  -->
+        <label for = 'email' > <h3> Email    </h3> </label> <!-- Intake Customer Email  -->
         <input type = 'email' id = 'email' name = 'email' value="<?php
         echo isset($_POST['email']) ? $_POST['email'] : '';
         ?>" autofocus>
+ 
         <br>
-        <br>
-        <label for = 'firstName' > First Name </label> <!-- Intake Customer First Name  -->
+        <label for = 'firstName' > <h3> First Name    </h3> </label> <!-- Intake Customer First Name  -->
         <input type = 'text' id = 'firstName' name = 'firstName' maxlength="30" value="<?php
         echo isset($_POST['firstName']) ? $_POST['firstName'] : '';
         ?>">
+        
         <br>
-          <br>
-        <label for = 'lastName' > Last Name </label> <!-- Intake Customer Last Name -->
+        <label for = 'lastName' > <h3> Last Name    </h3> </label> <!-- Intake Customer Last Name -->
         <input type = 'text' id = 'lastName' name = 'lastName' maxlength="30" value="<?php
         echo isset($_POST['lastName']) ? $_POST['lastName'] : '';
         ?>">
 
-        <br>
-          <br>
-            <br>
-
-
-
-
-      <label for='incomeRange' > Income Range </label> <!-- Justify better and add positioning -->
-      <?php
+        
+      <br>
+      <br>
+      <label for='incomeRange' > <h5> Income Range </h5> </label> <!-- Justify better and add positioning -->
+      
+       <?php
             $mysqli = get_mysqli_conn();
             $resultSet = $mysqli -> query("SELECT DISTINCT incomeRange FROM credit_cards");
             $mysqli -> query($resultSet); //output selection criteria
@@ -139,17 +138,18 @@
 
             echo '</select>';
       ?>
-        <br>
-          <br>
-      <label for='student_bool' > Are you a student registered in a University or College? </label> <!-- -->
+      
+      <br>
+      <label for='student_bool' > <h5> Are you a student registered in a University or College? </h5> </label> <!-- -->
       <select name='student_bool' id = 'student_bool'>
         <option value='false'>No</option>
         <option value='true'>Yes</option>
       </select>
-        <br>
-          <br>
-      <label for='rewardType' > Reward Type </label>  <!-- Intake reward type details -->
-      <?php
+       
+      <br>
+      <label for='rewardType' > <h5> Reward Type </h5> </label>  <!-- Intake reward type details -->
+
+       <?php
             $mysqli = get_mysqli_conn();
             $resultSet = $mysqli -> query("SELECT DISTINCT reward_type FROM credit_cards");
             $mysqli -> query($resultSet); //output selection criteria
@@ -161,10 +161,11 @@
 
             echo '</select>';
       ?>
-        <br>
-          <br>
-      <label for='averageMonthlySpending' > What is your average monthly spending? </label>  <!-- Intake reward type details -->
-      <?php
+      
+      <br>
+      <label for='averageMonthlySpending' > <h5> What is your average monthly spending? </h5> </label>  <!-- Intake reward type details -->
+
+     <?php
             $mysqli = get_mysqli_conn();
             $resultSet = $mysqli -> query("SELECT DISTINCT averageMonthlySpendingRange FROM credit_cards");
             $mysqli -> query($resultSet); //output selection criteria
@@ -176,11 +177,12 @@
 
             echo '</select>';
       ?>
-        <br>
-          <br>
-      <label for='creditScoreKnown' > Do you know your credit score? </label>
+      
+      <br>
+      <label for='creditScoreKnown' > <h5> Do you know your credit score? </h5> </label>
       <input type='checkbox' id='creditscoreKnown' name='creditScoreKnown' value='true' onclick='changeStatus(this)'/> <!-- Can we make the value of this show the selection form below if the checkbox is true -->
       <label for='What range is your credit score in?' > What range is your credit score in? </label>  <!-- Intake reward type details -->
+      
       <?php
             $mysqli = get_mysqli_conn();
             $resultSet = $mysqli -> query("SELECT DISTINCT creditScoreRange FROM credit_cards");
@@ -193,19 +195,18 @@
 
             echo '</select>';
       ?>
-          <br>
-            <br>
-       <label for = 'annualFee' > What is the maximum annual fee you are willing to incur? </label>
+         
+       <br>
+       <label for = 'annualFee' > <h5> What is the maximum annual fee you are willing to incur? </h5> </label>
           <input type = 'number' id = 'annualFee' name = 'annualFee' value="<?php
           echo isset($_POST['annualFee']) ? $_POST['annualFee'] : '';
           ?>">
           <br>
-            <br>
+          
 
-        <label for='prefferedInstitution' > What is your preffered institution/bank? </label>  <!-- Preffered Instituation  -->
+        <label for='prefferedInstitution' > <h5> What is your preffered institution/bank? </h5></label>  <!-- Preffered Instituation  -->
 
-
-      <?php
+       <?php
             $mysqli = get_mysqli_conn();
             $resultSet = $mysqli -> query("SELECT DISTINCT credit_card_company FROM credit_cards");
             $mysqli -> query($resultSet); //output selection criteria
@@ -218,13 +219,10 @@
             echo '</select>';
       ?>
 
-
-
-
-          <br>
-            <br>
-      <button type = 'submit' name = 'create'>Submit Survey</button> <!--  Formatting of Submit survey button can improve -->
-      <button type = 'submit' name = 'homePage'>Return to Home Page</button>
+      <br>  
+      <br>
+      <button type = 'submit' name = 'create'><h5> Submit Survey</h5></button> <!--  Formatting of Submit survey button can improve -->
+      <button type = 'submit' name = 'homePage'><h5>Return to Home Page</h5></button>
 
       </form>
     </center>

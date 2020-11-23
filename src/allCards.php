@@ -3,7 +3,7 @@
   session_start();
 
     //define connection parameters 
-        $mysqli = new mysqli("localhost","j7mah", "Rover@99", "j7mah"); // enter in nino's credentials for final product: ("localhost","nspasik", "Fall@*%2020", "nspasik");
+        $mysqli = new mysqli("localhost","nspasik", "Fall@*%2020", "nspasik"); // enter in nino's credentials for final product: ("localhost","nspasik", "Fall@*%2020", "nspasik");
         if ($mysqli->connect_errno) {
             echo "Failed to connect to MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
         }
