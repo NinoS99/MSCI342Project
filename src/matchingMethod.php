@@ -22,7 +22,7 @@ $creditCard = '';
     $mysqli = get_mysqli_conn();
     $sql = 'SELECT credit_card_name, URL FROM credit_cards
             WHERE incomeRange = "'.$incomeRange.'" AND reward_type = "'.$rewardType.'" AND averageMonthlySpendingRange = "'.$averageMonthlySpending.'"
-            AND annualFee <= "'.$annualFee.'" AND creditScoreRange = "'.$creditScore.'" AND student = "'.$student.'"';
+            AND annualFee >= "'.$annualFee.'" AND creditScoreRange = "'.$creditScore.'" AND student = "'.$student.'"';
 
     $creditCardArray = array();
 
@@ -63,7 +63,7 @@ $creditCard = '';
 
         $sql = 'SELECT credit_card_name, URL FROM credit_cards
                 WHERE incomeRange = "'.$incomeRange.'" AND reward_type = "'.$rewardType.'" AND averageMonthlySpendingRange = "'.$averageMonthlySpending.'"
-                AND annualFee <= "'.$annualFee.'" AND student = "'.$student.'"';
+                AND annualFee >= "'.$annualFee.'" AND student = "'.$student.'"';
 
         $results = mysqli_query($mysqli, $sql);
         while($rows = $results->fetch_assoc()) {?>
@@ -134,7 +134,7 @@ $creditCard = '';
       $mysqli = get_mysqli_conn();
       $sql = 'SELECT credit_card_name, URL FROM credit_cards
               WHERE incomeRange = "'.$incomeRange.'" AND reward_type = "'.$rewardType.'" AND averageMonthlySpendingRange = "'.$averageMonthlySpending.'"
-              AND annualFee <= "'.$annualFee.'" AND creditScoreRange = "'.$creditScore.'" AND student = "'.$student.'" AND credit_card_company = "'.$prefferedInstitution.'"';
+              AND annualFee >= "'.$annualFee.'" AND creditScoreRange = "'.$creditScore.'" AND student = "'.$student.'" AND credit_card_company = "'.$prefferedInstitution.'"';
 
       $creditCardArray = array();
 
@@ -158,7 +158,7 @@ $creditCard = '';
 
           $sql = 'SELECT credit_card_name, URL FROM credit_cards
                   WHERE incomeRange = "'.$incomeRange.'" AND reward_type = "'.$rewardType.'" AND averageMonthlySpendingRange = "'.$averageMonthlySpending.'"
-                  AND annualFee <= "'.$annualFee.'" AND student = "'.$student.'" AND credit_card_company = "'.$prefferedInstitution.'"';
+                  AND annualFee >= "'.$annualFee.'" AND student = "'.$student.'" AND credit_card_company = "'.$prefferedInstitution.'"';
 
           $results = mysqli_query($mysqli, $sql);
           while($rows = $results->fetch_assoc()) {?>
