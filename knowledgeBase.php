@@ -65,10 +65,14 @@
     </div>  
     <br>
     <div class="row">
-        <div class="col-sm-12">
+        <div class="col-sm-6">
+            <a href="creditScores.php"><button class="btn btn-success btn-lg"></br><h2>Credit Scores</h2></br></button></a>
+        </div>
+        <div class="col-sm-6">
             <a href="index.php"><button class="btn btn-danger btn-lg"></br><h2>Return to Homepage</h2></br></button></a>
         </div>
-</div>
+        
+    </div>
 
 
 <!--Formatting the look of the title block and buttons created above-->
@@ -86,55 +90,6 @@
          margin-right: auto;
          width: 50%;
         }
-
-
-    .buttonHCCW {
-        background-color: #DCF790;
-        border: none;
-        text-align: center;
-        width: 400px;
-        height: 100px;
-       margin:120px auto;
-    }
-
-    .buttonCCC {
-        background-color: #DCF790;
-        border: none;
-        text-align: center;
-        width: 400px;
-        height: 100px;
-        margin:120px auto;
-    }
-    .buttonTOCC {
-        background-color: #DCF790;
-        border: none;
-        text-align: center;
-        width: 400px;
-        height: 100px;
-        margin:120px auto;
-    }
-     .buttonCCF {
-        background-color: #DCF790;
-        border: none;
-        text-align: center;
-        width: 400px;
-        height: 100px;
-    }
-     .buttonCCA {
-        background-color: #DCF790;
-        border: none;
-        text-align: center;
-        width: 400px;
-        height: 100px;
-    }
-
-    .buttonReturn {
-        background-color: #EA7E77;
-        border: none;
-        text-align: center;
-        width: 400px;
-        height: 100px;
-    }
 
 </style>
 
