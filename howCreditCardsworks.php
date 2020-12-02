@@ -26,7 +26,7 @@
         <!-- Jumbotron titlebox-->
         <div class = "jumbotron">
             <h1 class="text-primary">
-            <p class="display-3">CreditSimple KnowledgeBase</p>
+            <p class="display-3">CreditSimple Knowledge Base</p>
             <small class="text-muted">How Credit Cards Work</small>
             </h1>
         </div>
