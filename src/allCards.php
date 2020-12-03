@@ -94,11 +94,13 @@
         </div>
     </div> 
     </div> 
-        <!--Formatting the look of the title block and buttons created above-->
-<style>
-   .wrapper {
-    text-align: center;
-}
+
+<!--Formatting the look of the title block and buttons created above-->
+    <style>
+       .wrapper {
+        text-align: center;
+    }
+        <style>
     </body>
     
 </html>
