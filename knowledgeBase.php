@@ -74,7 +74,7 @@
         
     </div>
 
-
+</div> 
 <!--Formatting the look of the title block and buttons created above-->
 <style>
    .wrapper {
