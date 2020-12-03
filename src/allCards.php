@@ -7,19 +7,27 @@
         if ($mysqli->connect_errno) {
             echo "Failed to connect to MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
         }
+        
+        if(isset($_GET['id']))
+    {
+        $location =$_GET['id'];
+     //   echo $location;
+       
+       // }
+       // $Comp = isset($_POST["location"]);
+       // echo $Comp;
 
         // Query DB to get all rows from team table and formate the output 
-        $query = "SELECT * FROM credit_cards";
+        $query = "SELECT credit_card_company, credit_card_name, card_network FROM credit_cards WHERE credit_card_company ='{$location}'";
         echo '<table border="1" cellspacing="2" cellpadding="2"> 
-    
     
     <tr> 
       <td> <font face="Arial">Company </font> </td> 
       <td> <font face="Arial">Credit Card Name </font> </td> 
 	  <td> <font face="Arial">Card Network </font> </td> 
       </tr>';
-
-     // outputs the value in the webpage excluding the ID column
+}
+     // outputs the company, name and network corresponding to the filter applied in the webpage 
         if ($result = $mysqli->query($query)) {
             while ($row = $result->fetch_assoc()) {
                 $field1name = $row["credit_card_company"];
@@ -32,10 +40,11 @@
 		          <td>'.$field3name.'</td> 
               </tr>';
             }
+            
         /*freeresultset*/
         $result->free();
         }
-
+        
  ?>
 
 <html>
@@ -56,7 +65,42 @@
         <div class = "jumbotron">
             <h1 class="text-primary">
             <p class="display-3">CreditSimple Credit Cards</p>
+            <small class="text-muted">List of all credit cards our application can recommend!</small>
             </h1>
         </div>
+    
+    <body>
+        <form method="GET">
+            <label for = " ">Filter by Company:</label>
+                <select name="location" onchange="window.location='allCards.php?id='+this.value+'&pos='+this.selectedIndex;">
+                    <option value = " "> Select a company</option>
+                    <option value = "American Express"> American Express </option>
+                    <option value = "BMO">BMO</option>
+                    <option value = "Capital One Canada">Capital One Canada</option>
+                    <option value = "CIBC">CIBC</option>
+                    <option value = "RBC">RBC</option>
+                    <option value = "ScotiaBank">Scotiabank</option>
+                    <option value = "TD Canada">TD Canada</option>
+                    <option value = "Triangle (Canadian Tire)">Triangle (Canadian Tire)</option>
+                    </select>
+        </form>
+        
+    <div class="wrapper">
+    <div class="row">
+        <div class="fixed-bottom">
+        <div class="col-sm-12">
+            <a href="../src/submit.php"><button class="btn btn-danger btn-lg"></br><h1>Return to results page</h1></br></button></a>
+        </div>
+        </div>
+    </div> 
+    </div> 
 
+<!--Formatting the look of the title block and buttons created above-->
+    <style>
+       .wrapper {
+        text-align: center;
+    }
+        <style>
+    </body>
+    
 </html>
