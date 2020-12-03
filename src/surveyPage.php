@@ -61,6 +61,45 @@
   if (isset($_POST["homePage"])){
       header("Location: ../index.php");
     }
+
+if(isset($_POST['create'])){ // submit create
+  //  $to = $_POST['email']; // this is your Email address $_POST['email'];
+    $from = "info@CreditSimple.com"; // this is the sender's Email address "email@example.com";
+   // $first_name = $_POST['firstName'];
+  //  $last_name = $_POST['lastName'];
+   // $income_range = $_POST['incomeRange'];
+   // $student = $_POST['student_bool'];
+  //  $reward_type = $_POST['rewardType'];
+  //  $avg_monthly_spending = $_POST['averageMonthlySpending'];
+  //  $credit_score = $_POST['creditScore'];
+  //  $max_annual_fee = $_POST['annualFee'];
+  //  $prefered_issuer = $_POST['prefferedInstitution'];
+    
+    
+    $subject = "CreditSimple Survey submission";
+   // $subject2 = "Copy of your form submission";
+    $message1 = "Here is a copy of your CreditSimple survey:" . "\r\n" .  "Income Range: " . $incomeRange . "\r\n" .  "Are you a student registered in a University or College? " . $student. "\r\n" .  "Reward Type: " . $rewardType. "\r\n" .  "What is your average monthly spending? " . $averageMonthlySpending. "\r\n" .  "What range is your credit score in? " . $creditScore. "\r\n" .  "What is the maximum annual fee you are willing to incur? " . $annualFee. "\r\n" .  "What is your preffered institution/bank? " . $prefferedInstitution;
+   // $message2 = "Income Range: " . $incomeRange . "\n\n";
+   // $message3 = "Are you a student registered in a University or College? " . $student . "\n\n";
+  //  $message4 = "Reward Type: " . $rewardType . "\n\n";
+  //  $message5 = "What is your average monthly spending? " . $averageMonthlySpending . "\n\n";
+   // $message6 = "What range is your credit score in? " . $creditScore . "\n\n";
+   // $message7 = "What is the maximum annual fee you are willing to incur? " . $annualFee . "\n\n";
+  //  $message8 = "What is your preffered institution/bank? " . $prefferedInstitution . "\n\n";
+    
+   // $message9 = " " + . $message1 . " " + . $message2 . " " + . $message3 . " " +  . $message4 . " " + . $message5 . " " + . $message6 . " " + . $message7 . " " + . $message8;
+    
+    //$message10 = "Income Range: " . $_POST['incomeRange'] . "\n\n";
+    //$message11 = "Income Range: " .  $incomeRange . "\n\n";
+    
+    $headers = "From:" . $from;
+    $headers2 = "To:" . $_POST['email'];
+    mail($email,$subject,$message1);
+    //mail($from,$subject2,$message10, $headers2); // sends a copy of the message to the sender
+  //  echo "Mail Sent. Thank you " . $firstName .", we will contact you shortly.";
+    // You can also use header('Location: thank_you.php'); to redirect to another page.
+    }
+
   ?>
   <html>
 <head>
@@ -220,11 +259,14 @@
       ?>
 
       <br>  
+      <h3> Clicking submit will send your survey results to the email specified (please check your junk folder if you have not receieved it)</h3>
       <br>
+     
       <button type = 'submit' name = 'create'><h5> Submit Survey</h5></button> <!--  Formatting of Submit survey button can improve -->
       <button type = 'submit' name = 'homePage'><h5>Return to Home Page</h5></button>
-
-      </form>
+      
+      
+    </form>
     </center>
 </html>
 
