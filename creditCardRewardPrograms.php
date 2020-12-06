@@ -13,6 +13,8 @@
         <!--Create text styles-->
         <style type = "text/css"> h1 {color:black}</style>
         <style type = "text/css"> h2 {color:black}</style>
+        <style type = "text/css"> h3 {text-align: justify; padding-left: 75px; padding-right: 75px; padding-bottom: 20px}</style>
+        <style type = "text/css"> h5 {text-align: justify; padding-left: 75px; padding-right: 75px}</style>
         
 		<!--Import relevant style sheets-->
 		<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -30,24 +32,24 @@
         </div>
     
 <!--Outline of cash back rewards-->
-   <h3> Cash Back Rewards </h3>
+   <h3 class="display-4 text-success"> Cash Back Rewards </h3>
    <h5> Cash back rewards provide a cash rebate when goods and services are purchased. The actual cash can take the form of either a monthly credit on your statement, or a cheque in the mail after every milestone or year you have it. In the credit card agreement for a cash back rewards, the issuer will specify the rewards based on specific purchases. For example, you may receieve 4% cash back on groceries but only 1% on other purchases. The way to use these rewards to your advantage is to find one with rewards tailored to your spending habits, and always pay off your balance in full so you avoid interest charges and get the maximum rewards without the interest costs.</h5>
    
 <!--Pros of cash back rewards-->
-    <h5>Pros of cash back rewards: <h5>
+    <h3 class="text-primary">Pros of cash back rewards: </h3>
     <ul>
     <h5> <li> The obvious advantage of a cash back credit card is that it puts money in your pocket with each purchase you make. Most cards offer between 1.00-4.00% cash back </li> </h5> 
     </ul>
         
 <!--Cons of cash back rewards-->
-    <h5>Cons of cash back rewards: <h5>
+    <h3 class="text-primary">Cons of cash back rewards: </h3>
     <ul>
     <h5> <li>Some cards have a maximum cash back amount they will pay you per month. For example, a card could pay 1.00% cash back on purchases up to $1,500.00 per month, but nothing above that amount. In this case, your maximum cash back is 1.00% of $1,500.00 = $15.00 per month. If you consistently spend more than this amount, look for a cash back card with either a higher maximum or no maximum at all. </li> </h5> 
     <h5> <li>Cash back cards, like many rewards cards, can tempt you to overspend. Given that you make money every time you put something on your card, there is an incentive to spend beyond your means. If you find yourself buying things you don’t really need, it’s possible that you’re overspending because of the cash back reward.</li> </h5> 
     </ul>
         
 <!--Outline of travel rewards-->
-   <h3> Travel Rewards </h3>
+   <h3 class="display-4 text-success"> Travel Rewards </h3>
    <h5> Travel rewards allow customers to earn travel points for all purchases made. The travel points you earn can then be used to help you pay for some portion of a trip, whether it’s a flight, hotel, excursion or any number of other travel-related expenses. Travel points/miles can be exchanged for a certain dollar value of travel expenses and can be used directly to purchase the travel expense (i.e. Aeroplan will tell you how many points are needed for a specific flight). If you’re an avid traveller, travel benefits may be the perfect thing to keep in your wallet. If you decide to get a travel rewards credit card, keep in mind that while the rewards won’t buy much initially, they do eventually add up. The important thing is to actually use them: points that never get redeemed are points wasted.</h5>
         
 <!--Outline of what travel points can redeem-->
@@ -66,14 +68,14 @@
     </ul>
         
 <!--Pros of travel rewards-->
-    <h5>Pros of travel rewards: <h5>
+    <h3 class="text-primary">Pros of travel rewards: </h3>
     <ul>
     <h5> <li> Being able to redeem points towards multiple travel expenses </li> </h5>
     <h5> <li> Most come with at least some amount of travel medical insurance, possibly trip cancellation and trip interruption insurance, and even collision and damage insurance on any rental cars you use </li> </h5> 
     </ul>
         
 <!--Cons of travel rewards-->
-    <h5>Cons of travel rewards: <h5>
+    <h3 class="text-primary">Cons of travel rewards: </h3>
     <ul>
     <h5> <li> Sometimes booking your desired trip can be difficult (i.e. some travel rewards do not allow you to book flights during busy travel periods, known as “blackout periods”)</li> </h5> 
     <h5> <li> Some travel points expire </li> </h5> 
@@ -81,7 +83,7 @@
     </ul>
 
 <!--Outline of other types or rewards-->
-   <h3> Other types of rewards </h3>
+   <h3 class="display-4 text-success"> Other types of rewards </h3>
    <ul>
     <h5> <li> Loyalty Programs </li> </h5>
     <h5> <li> Sign-Up Bonuses </li> </h5> 
@@ -112,6 +114,8 @@
     
     .wrapper {
         text-align: center;
+        padding-top: 25px;
+        padding-bottom: 25px;
     }
 </style>
     

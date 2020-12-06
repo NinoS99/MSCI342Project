@@ -13,7 +13,8 @@
         <!--Create text styles-->
         <style type = "text/css"> h1 {color:black}</style>
         <style type = "text/css"> h2 {color:black}</style>
-        
+        <style type = "text/css"> h3 {text-align: justify; padding-left: 75px; padding-right: 75px; padding-bottom: 20px}</style>
+        <style type = "text/css"> h5 {text-align: justify; padding-left: 75px; padding-right: 75px}</style>
 		<!--Import relevant style sheets-->
 		<meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -31,7 +32,7 @@
         </div>
     
 <!--Outline of credit card application requirements-->
- <h3> Applications Requirements </h3>
+<h3 class="display-4 text-success"> Applications Requirements </h3>
    <h5> Submitting a credit card application is your way of requesting access to credit. The main risk to a credit card issuer is that they will lend money you cannot/will not pay back. For this reason, applying for a credit card requires that you demonstrate to the card issuer (lender) you are a responsible and capable borrower. Below is some of the information you will need to provide: </h5>
 <!--List of requirements-->
     <ul>
@@ -47,7 +48,7 @@
     <h5> In addition, the credit card issuer will review your credit hirstory using a reputable credit-reporting agency which will provide your credit report and score upon you authorization. The information the credit card issuer obtains about you is used to determine whether or not they should give you access to credit and how much credit they can extend. The amount you earn on an annual basis can directly impact which credit card you qualify for and how much credit you’ll be given access to. </h5>
     
 <!--Outline of credit card application information-->
-    <h3> Application Information </h3>
+    <h3 class="display-4 text-success"> Application Information </h3>
     <h5> The following list below is an example of some of the credit card information you should expect the credit card issuer to provide consumers: </h5>
 <!--List of common information-->
     <ul>
@@ -63,13 +64,13 @@
     </ul>
     
     <!--Outline of credit card application approval process-->
-    <h3> Application Approval Process </h3>
+    <h3 class="display-4 text-success"> Application Approval Process </h3>
     <h5> The process takes roughly 5-7 days to be approved but can stretch up to 30 days. For some credit cards, you can apply online and find out if you’ve been approved almost immediately. These are known as instant approval credit cards. If your application is successful, you will still have to wait 5-7 days to receive the card in the mail. However, the approval is conditional upon a background check, i.e. a review of your credit report and credit score. </h5>
     
     <!--Outline of activating your new card once approved-->
-    <h3> Activating your new credit card </h3>
+    <h3 class="display-4 text-success"> Activating your new credit card </h3>
     <h5> If you have been successfully approved, congratulations! A new credit card will be mailed to the address specified on your application. Once you've received your card, you must call the toll-free number on the back of the card to activate and start using it. </h5>
-    
+
     <!--Button to allow user to go back to the knowledge base page-->
     <div class="wrapper">
         <div class="row">
@@ -93,9 +94,11 @@
     
     .wrapper {
         text-align: center;
+        padding-top: 25px;
+        padding-bottom: 25px;
     }
 </style>
     
-    <body>
+</body>
 
 </html>
