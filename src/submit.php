@@ -13,6 +13,8 @@
 
   session_start();
   include_once("matchingMethod.php");
+  include_once('../my_connect.php'); //Using previously built connection
+  include_once('PHPExcel.php');
 
   $incomeRange = $_SESSION['incomeRange'];
   $rewardType = $_SESSION['rewardType'];
@@ -38,41 +40,55 @@ print "<h2>$warningMessage</h2>";
 			<table class="table">
         <?php
 
-        $creditCardArray = getCreditCardSuggestion($incomeRange,$rewardType,$student,$averageMonthlySpending,$annualFee,$creditScore,$prefferedInstitution);
+      $creditCardArray = getCreditCardSuggestion($incomeRange,$rewardType,$student,$averageMonthlySpending,$annualFee,$creditScore,$prefferedInstitution);
       // Code to export user's results to excel
       $length = count($creditCardArray);
+
+      $testArray = array_chunk($creditCardArray,2);
+
     //  $length  = $length/2;
 
-      if (isset($_POST["export"])) {
+    $creditCardName = $creditCardArray[0];
+    //include("DBController.php");
+    //$db_handle = new DBController();
+    //$productResult = $db_handle->runQuery("SELECT credit_card_company, credit_card_name, card_network, incomeRange, reward_type, student, averageMonthlySpendingRange, creditScoreRange, annualFee FROM credit_cards WHERE credit_card_name = '.$creditCardName.' ");
 
-      for ($x = 0; $x < $length; $x = $x + 2){
 
-        $creditCardName = $creditCardArray[$x];
-
-        //$throwAway = array_pop($creditCardArray);
-
-        include 'DBController.php';
-        $db_handle = new DBController();
-        $productResult = $db_handle->runQuery("SELECT credit_card_company, credit_card_name, card_network, incomeRange,  reward_type, student, averageMonthlySpendingRange, creditScoreRange,  annualFee FROM credit_cards WHERE credit_card_name = '.$creditCardName.' ");
-
-          $filename = "CreditCardInformation.xls";
-          header("Content-Type: application/vnd.ms-excel");
-          header("Content-Disposition: attachment; filename=\"$filename\"");
-          $isPrintHeader = false;
-            foreach ($productResult as $row) {
-              if (! $isPrintHeader) {
-                echo implode("\t", array_keys($row)) . "\n";
-                $isPrintHeader = true;
-                }
-                echo implode("\t", array_values($row)) . "\n";
-              }
-          }
-        exit();
-      }
           ?>
         </table>
   </div>
 </div>
+
+<?php
+if (isset($_POST["export"])) {
+  //for ($x = 0; $x < $length; $x = $x + 2){
+
+$filename = "CreditCardInformation.xls";
+header("Content-Type: application/vnd.ms-excel");
+header("Content-Disposition: attachment; filename=\"$filename\"");
+
+echo "<br>";
+echo "<h1>Here is What You Answered to the User Survey:</h1>";
+
+echo "<h2>Your income range is: $incomeRange</h2>";
+echo "<br>";
+echo "<h2>Your preffered reward type is: $rewardType</h2>";
+echo "<br>";
+echo "<h2>Student: $student</h2>";
+echo "<br>";
+echo "<h2>Your average monthly spending is: $averageMonthlySpending</h2>";
+echo "<br>";
+echo "<h2>The maximum annual fee you are willing to pay is: $$annualFee </h2>";
+echo "<br>";
+echo "<h2>Your credit score is: $creditScore</h2>";
+echo "<br>";
+echo "<h2>Your preffered institution is: $prefferedInstitution</h2>";
+
+exit;
+
+}
+ ?>
+
 <br>
 <br>
   <form method="post">
@@ -91,7 +107,8 @@ print "<h2>$warningMessage</h2>";
         </div>
       </a>
   </form>
-      
+
+
       <div id="table-container">
       <div class="btn">
           <form action="" method="post">
