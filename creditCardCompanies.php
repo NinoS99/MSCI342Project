@@ -30,11 +30,17 @@
         </div>
     <!--List major credit card companies with corresponding photos-->
     <center>   
-    <h2> Below are the top three major credit card companies in the world!</h2> <br>
-    <br> <img src="visa.jpg"> 
-    <img src="mastercard.jpg" style="width:394px;height:222px;">
-    <img src="amex.jpeg" style="width:394px;height:222px;">
-      
+    <h2 class="display-4 text-success"> Below are the top three credit card companies! Click on them to learn more!</h2> <br>
+    
+    <div class="wrapper">
+        <br> <a href="https://www.visa.ca/en_CA"><img src="visa.jpg"></a> <br>
+    </div>
+    <div class="wrapper">
+        <a href="https://www.mastercard.ca/en-ca.html"><img src="mastercard.jpg" style="width:394px;height:222px;"></a> <br>
+    </div>
+    <div class="wrapper">
+        <a href="https://www.americanexpress.com/ca/"><img src="amex.jpeg" style="width:394px;height:222px;"></a>
+    </div>
     <!--Button to allow user to go back to the knowledge base page-->
     <div class="wrapper">
     <div class="row">
@@ -57,6 +63,8 @@
         }
     .wrapper {
         text-align: center;
+        padding-top: 25px;
+        padding-bottom: 25px;
     }
 </style>
     
