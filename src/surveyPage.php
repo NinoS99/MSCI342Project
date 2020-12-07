@@ -21,8 +21,12 @@
         $error = true;
       }
     }
-    if ($error){
+
+    if ($error or ($_POST['annualFee'] < 0)){
       $warningMessage = "All fields are required.";
+      if ($_POST['annualFee'] < 0) {
+        $warningMessage = "Annual Fee must not be negative.";
+      }
     }
     else {
       $email = $_POST['email'];
@@ -74,8 +78,8 @@ if(isset($_POST['create'])){ // submit create
   //  $credit_score = $_POST['creditScore'];
   //  $max_annual_fee = $_POST['annualFee'];
   //  $prefered_issuer = $_POST['prefferedInstitution'];
-    
-    
+
+
     $subject = "CreditSimple Survey submission";
    // $subject2 = "Copy of your form submission";
     $message1 = "Here is a copy of your CreditSimple survey:" . "\r\n" .  "Income Range: " . $incomeRange . "\r\n" .  "Are you a student registered in a University or College? " . $student. "\r\n" .  "Reward Type: " . $rewardType. "\r\n" .  "What is your average monthly spending? " . $averageMonthlySpending. "\r\n" .  "What range is your credit score in? " . $creditScore. "\r\n" .  "What is the maximum annual fee you are willing to incur? " . $annualFee. "\r\n" .  "What is your preffered institution/bank? " . $prefferedInstitution;
@@ -86,12 +90,12 @@ if(isset($_POST['create'])){ // submit create
    // $message6 = "What range is your credit score in? " . $creditScore . "\n\n";
    // $message7 = "What is the maximum annual fee you are willing to incur? " . $annualFee . "\n\n";
   //  $message8 = "What is your preffered institution/bank? " . $prefferedInstitution . "\n\n";
-    
+
    // $message9 = " " + . $message1 . " " + . $message2 . " " + . $message3 . " " +  . $message4 . " " + . $message5 . " " + . $message6 . " " + . $message7 . " " + . $message8;
-    
+
     //$message10 = "Income Range: " . $_POST['incomeRange'] . "\n\n";
     //$message11 = "Income Range: " .  $incomeRange . "\n\n";
-    
+
     $headers = "From:" . $from;
     $headers2 = "To:" . $_POST['email'];
     mail($email,$subject,$message1);
@@ -140,32 +144,39 @@ if(isset($_POST['create'])){ // submit create
             <p class="display-3">- User Survey - </p>
             </h1>
         </div>
-    <br>
 
+
+<style>
+td {
+  text-align: left;
+}
+</style>
+
+<table >
+  <tr>
       <form method="post" enctype="multipart/form-data">
-        <label for = 'email' > <h3> Email    </h3> </label> <!-- Intake Customer Email  -->
-        <input type = 'email' id = 'email' name = 'email' value="<?php
+        <td><label for = 'email' > <h5> Email    </h5> </label></td> <!-- Intake Customer Email  -->
+        <td><input type = 'email' id = 'email' name = 'email' value="<?php
         echo isset($_POST['email']) ? $_POST['email'] : '';
-        ?>" autofocus>
- 
-        <br>
-        <label for = 'firstName' > <h3> First Name    </h3> </label> <!-- Intake Customer First Name  -->
-        <input type = 'text' id = 'firstName' name = 'firstName' maxlength="30" value="<?php
+        ?>" autofocus></td>
+  </tr>
+  <tr>
+        <td><label for = 'firstName' > <h5> First Name    </h5> </label></td> <!-- Intake Customer First Name  -->
+        <td><input type = 'text' id = 'firstName' name = 'firstName' maxlength="30" value="<?php
         echo isset($_POST['firstName']) ? $_POST['firstName'] : '';
-        ?>">
-        
+        ?>"></td>
+  </tr>
+  <tr>
         <br>
-        <label for = 'lastName' > <h3> Last Name    </h3> </label> <!-- Intake Customer Last Name -->
-        <input type = 'text' id = 'lastName' name = 'lastName' maxlength="30" value="<?php
+        <td><label for = 'lastName' > <h5> Last Name    </h5> </label></td> <!-- Intake Customer Last Name -->
+        <td><input type = 'text' id = 'lastName' name = 'lastName' maxlength="30" value="<?php
         echo isset($_POST['lastName']) ? $_POST['lastName'] : '';
-        ?>">
+        ?>"></td>
+  </tr>
+  <tr>
+      <td><label for='incomeRange' > <h5> Income Range </h5> </label> </td> <!-- Justify better and add positioning -->
 
-        
-      <br>
-      <br>
-      <label for='incomeRange' > <h5> Income Range </h5> </label> <!-- Justify better and add positioning -->
-      
-       <?php
+      <td> <?php
             $mysqli = get_mysqli_conn();
             $resultSet = $mysqli -> query("SELECT DISTINCT incomeRange FROM credit_cards");
             $mysqli -> query($resultSet); //output selection criteria
@@ -176,19 +187,19 @@ if(isset($_POST['create'])){ // submit create
             }
 
             echo '</select>';
-      ?>
-      
-      <br>
-      <label for='student_bool' > <h5> Are you a student registered in a University or College? </h5> </label> <!-- -->
-      <select name='student_bool' id = 'student_bool'>
+      ?> </td>
+</tr>
+<tr>
+      <td><label for='student_bool' > <h5> Are you a student registered in a University or College? </h5> </label></td> <!-- -->
+      <td><select name='student_bool' id = 'student_bool'>
         <option value='false'>No</option>
         <option value='true'>Yes</option>
-      </select>
-       
-      <br>
-      <label for='rewardType' > <h5> Reward Type </h5> </label>  <!-- Intake reward type details -->
+      </select></td>
+</tr>
+<tr>
+      <td><label for='rewardType' > <h5> Reward Type </h5> </label></td>  <!-- Intake reward type details -->
 
-       <?php
+       <td><?php
             $mysqli = get_mysqli_conn();
             $resultSet = $mysqli -> query("SELECT DISTINCT reward_type FROM credit_cards");
             $mysqli -> query($resultSet); //output selection criteria
@@ -199,12 +210,12 @@ if(isset($_POST['create'])){ // submit create
             }
 
             echo '</select>';
-      ?>
-      
-      <br>
-      <label for='averageMonthlySpending' > <h5> What is your average monthly spending? </h5> </label>  <!-- Intake reward type details -->
+      ?></td>
+</tr>
+<tr>
+      <td><label for='averageMonthlySpending' > <h5> What is your average monthly spending? </h5> </label></td>  <!-- Intake reward type details -->
 
-     <?php
+     <td><?php
             $mysqli = get_mysqli_conn();
             $resultSet = $mysqli -> query("SELECT DISTINCT averageMonthlySpendingRange FROM credit_cards");
             $mysqli -> query($resultSet); //output selection criteria
@@ -215,14 +226,16 @@ if(isset($_POST['create'])){ // submit create
             }
 
             echo '</select>';
-      ?>
-      
-      <br>
-      <label for='creditScoreKnown' > <h5> Do you know your credit score? </h5> </label>
-      <input type='checkbox' id='creditscoreKnown' name='creditScoreKnown' value='true' onclick='changeStatus(this)'/> <!-- Can we make the value of this show the selection form below if the checkbox is true -->
-      <label for='What range is your credit score in?' > What range is your credit score in? </label>  <!-- Intake reward type details -->
-      
-      <?php
+      ?></td>
+</tr>
+<tr>
+      <td><br><label for='creditScoreKnown' > <h5> Do you know your credit score? </h5> </label></td>
+      <td><input type='checkbox' id='creditscoreKnown' name='creditScoreKnown' value='true' onclick='changeStatus(this)'/> </td><!-- Can we make the value of this show the selection form below if the checkbox is true -->
+</tr>
+<tr>
+      <td><label for='What range is your credit score in?' > What range is your credit score in? </label> </td> <!-- Intake reward type details -->
+
+      <td><?php
             $mysqli = get_mysqli_conn();
             $resultSet = $mysqli -> query("SELECT DISTINCT creditScoreRange FROM credit_cards");
             $mysqli -> query($resultSet); //output selection criteria
@@ -233,19 +246,20 @@ if(isset($_POST['create'])){ // submit create
             }
 
             echo '</select>';
-      ?>
-         
-       <br>
-       <label for = 'annualFee' > <h5> What is the maximum annual fee you are willing to incur? </h5> </label>
-          <input type = 'number' id = 'annualFee' name = 'annualFee' value="<?php
+      ?><br><br> <br></td>
+</tr>
+<tr>
+
+       <td><label for = 'annualFee' > <h5> What is the maximum annual fee you are willing to incur?          </h5> </label></td>
+        <td>  <input type = 'number' id = 'annualFee' name = 'annualFee' value="<?php
           echo isset($_POST['annualFee']) ? $_POST['annualFee'] : '';
           ?>">
-          <br>
-          
+      </td>
+<tr>
 
-        <label for='prefferedInstitution' > <h5> What is your preffered institution/bank? </h5></label>  <!-- Preffered Instituation  -->
+        <td><label for='prefferedInstitution' > <h5> What is your preffered institution/bank? </h5></label> </td> <!-- Preffered Instituation  -->
 
-       <?php
+       <td><?php
             $mysqli = get_mysqli_conn();
             $resultSet = $mysqli -> query("SELECT DISTINCT credit_card_company FROM credit_cards");
             $mysqli -> query($resultSet); //output selection criteria
@@ -256,16 +270,21 @@ if(isset($_POST['create'])){ // submit create
             }
             echo '<option value="none">none</option>';
             echo '</select>';
-      ?>
+      ?></td>
 
-      <br>  
+      </tr>
+
+</table>
+      <br>
+      <br>
+      <br>
       <h3> Clicking submit will send your survey results to the email specified (please check your junk folder if you have not receieved it)</h3>
       <br>
-     
+
       <button type = 'submit' name = 'create'><h5> Submit Survey</h5></button> <!--  Formatting of Submit survey button can improve -->
       <button type = 'submit' name = 'homePage'><h5>Return to Home Page</h5></button>
-      
-      
+
+
     </form>
     </center>
 </html>
