@@ -5,10 +5,30 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 <script src="jquery.js"></script>
+   <!--Bootstrap CDN-->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+    <!--Create text styles-->
+    <link rel = 'stylesheet' type = 'text/css' href = 'style.css'>
+    <!--Import relevant style sheets-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+  <!--End head-->
 </head>
 
+<!-- Jumbotron titlebox-->
+ <div class = "jumbotron">
+     <h1 class="text-primary">
+     <p class="display-5"> Thank you for using our program! Happy spending!  </p>
+     <p class="display-7"> The following credit card(s) suits you best:  </p>
+     </h1>
+ </div>
 
-<body>
+
+<body style="background-color:#eff8fe;">
 <?php
 
   session_start();
@@ -29,14 +49,9 @@ print "<h2>$warningMessage</h2>";
 
   ?>
 
+
 <div class="container">
   <div class="row justify-content-center">
-    <div>
-      <h2> Thank you for using our program! Happy spending!</h2>
-    </div>
-    <div>
-      <h2> The following credit card(s) suits you best:</h2>
-    </div>
 			<table class="table">
         <?php
 
@@ -95,42 +110,46 @@ exit;
     <a href="../index.php">
       <div class="container">
         <div class="row justify-content-center">
-        <h2> Click here to return to home page!</h2>
+        <h5> Click here to return to home page!</h5>
       </div>
     </div>
     </a>
+      <a href="../src/allCards.php">
     <div class="container">
       <div class="row justify-content-center">
-  <a href="../src/allCards.php">
-        <div>
-          <h2> Click here to see a list of other credit cards available in the application!</h2>
-        </div>
+          <h5> Click here to see a list of other credit cards available in the application!</h5>
+    </div>
+    </div>
       </a>
   </form>
 
+  <style>
+  .makeitalign {
+    height: 200px;
+    position: relative;
+  }
 
-      <div id="table-container">
-      <div class="btn">
+  .inthemiddle {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+  </style>
+
+<div class="makeitalign">
+        <div class="inthemiddle">  
+      <!--<div id="table-container">-->
+     <!-- <div class="btn">-->
           <form action="" method="post">
               <button type="submit" id="btnExport" name='export'
                   value="Export to Excel" class="btn btn-info">Export to Excel</button>
           </form>
       </div>
-      
-      <style>
-          .btn {
-            margin: 0;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            -ms-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%);
-          }
-  </div>
-  </div>
-      </style>
-      
-  </div>
-
+    <!--</div>-->
+    <!--  </div>-->
+        </div>
 </body>
 </html>

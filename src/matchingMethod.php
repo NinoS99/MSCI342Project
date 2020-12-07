@@ -18,6 +18,23 @@ $creditCard = '';
   }
 
 
+  ?>
+
+        <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+      		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+      		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <div class="container">
+      <div class="row justify-content-center">
+      			<table class="table">
+  				<thead>
+  					<tr>
+  						<th style="text-align:left">Credit Card Name</th>
+  						<th style="text-align:left">URL</th>
+  					</tr>
+  				</thead>
+
+          <?php
+
   function noInstitutionPreferenceQueries($incomeRange, $rewardType, $student, $averageMonthlySpending, $annualFee, $creditScore){
     $mysqli = get_mysqli_conn();
     $sql = 'SELECT credit_card_name, URL FROM credit_cards
@@ -27,28 +44,11 @@ $creditCard = '';
     $creditCardArray = array();
 
     $results = mysqli_query($mysqli, $sql);
-?>
-
-      <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
-    		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-<div class="container">
-    <div class="row justify-content-center">
-    			<table class="table">
-  			<table = >
-				<thead>
-					<tr>
-						<th style="text-align:center">Credit Card Name</th>
-						<th style="text-align:center">URL</th>
-					</tr>
-				</thead>
-
-        <?php
 
     while($rows = $results->fetch_assoc()) {?>
       <tr>
-        <td><?php echo $rows['credit_card_name']; ?></td>
-        <td><?php echo '<a href="' . $rows['URL'] . '">Credit Card Website</a>'; ?></td>
+        <td style="text-align:left"><?php echo $rows['credit_card_name']; ?></td>
+        <td style="text-align:center"><?php echo '<a href="' . $rows['URL'] . '">Credit Card Website</a>'; ?></td>
       </tr>
       <tr>
         <td><?php print ""; ?></td>
@@ -68,8 +68,8 @@ $creditCard = '';
         $results = mysqli_query($mysqli, $sql);
         while($rows = $results->fetch_assoc()) {?>
           <tr>
-            <td><?php echo $rows['credit_card_name']; ?></td>
-            <td><?php echo '<a href="' . $rows['URL'] . '">Credit Card Website</a>'; ?></td>
+            <td style="text-align:left"><?php echo $rows['credit_card_name']; ?></td>
+            <td style="text-align:center"><?php echo '<a href="' . $rows['URL'] . '">Credit Card Website</a>'; ?></td>
           </tr>
           <tr>
             <td><?php print ""; ?></td>
@@ -89,8 +89,8 @@ $creditCard = '';
             $results = mysqli_query($mysqli, $sql);
             while($rows = $results->fetch_assoc()) {?>
               <tr>
-                <td><?php echo $rows['credit_card_name']; ?></td>
-                <td><?php echo '<a href="' . $rows['URL'] . '">Credit Card Website</a>'; ?></td>
+                <td style="text-align:left"><?php echo $rows['credit_card_name']; ?></td>
+                <td style="text-align:center"><?php echo '<a href="' . $rows['URL'] . '">Credit Card Website</a>'; ?></td>
               </tr>
               <tr>
                 <td><?php print ""; ?></td>
@@ -111,8 +111,8 @@ $creditCard = '';
               $results = mysqli_query($mysqli, $sql);
               while($rows = $results->fetch_assoc()) {?>
                 <tr>
-                  <td><?php echo $rows['credit_card_name']; ?></td>
-                  <td><?php echo '<a href="' . $rows['URL'] . '">Credit Card Website</a>'; ?></td>
+                  <td style="text-align:left"><?php echo $rows['credit_card_name']; ?></td>
+                  <td style="text-align:center"><?php echo '<a href="' . $rows['URL'] . '">Credit Card Website</a>'; ?></td>
                 </tr>
                 <tr>
                   <td><?php print ""; ?></td>
@@ -139,10 +139,12 @@ $creditCard = '';
       $creditCardArray = array();
 
       $results = mysqli_query($mysqli, $sql);
+
+
       while($rows = $results->fetch_assoc()) {?>
         <tr>
-          <td><?php echo $rows['credit_card_name']; ?></td>
-          <td><?php echo '<a href="' . $rows['URL'] . '">Credit Card Website</a>'; ?></td>
+          <td style="text-align:left"><?php echo $rows['credit_card_name']; ?></td>
+          <td style="text-align:center"><?php echo '<a href="' . $rows['URL'] . '">Credit Card Website</a>'; ?></td>
         </tr>
         <tr>
           <td><?php print ""; ?></td>
@@ -163,8 +165,8 @@ $creditCard = '';
           $results = mysqli_query($mysqli, $sql);
           while($rows = $results->fetch_assoc()) {?>
             <tr>
-              <td><?php echo $rows['credit_card_name']; ?></td>
-              <td><?php echo '<a href="' . $rows['URL'] . '">Credit Card Website</a>'; ?></td>
+              <td style="text-align:left"><?php echo $rows['credit_card_name']; ?></td>
+              <td style="text-align:center"><?php echo '<a href="' . $rows['URL'] . '">Credit Card Website</a>'; ?></td>
             </tr>
             <tr>
               <td><?php print ""; ?></td>
@@ -185,8 +187,8 @@ $creditCard = '';
               $results = mysqli_query($mysqli, $sql);
               while($rows = $results->fetch_assoc()) {?>
                 <tr>
-                  <td><?php echo $rows['credit_card_name']; ?></td>
-                  <td><?php echo '<a href="' . $rows['URL'] . '">Credit Card Website</a>'; ?></td>
+                  <td style="text-align:left"><?php echo $rows['credit_card_name']; ?></td>
+                  <td style="text-align:center"><?php echo '<a href="' . $rows['URL'] . '">Credit Card Website</a>'; ?></td>
                 </tr>
                 <tr>
                   <td><?php print ""; ?></td>
@@ -207,8 +209,8 @@ $creditCard = '';
                 $results = mysqli_query($mysqli, $sql);
                 while($rows = $results->fetch_assoc()) {?>
                   <tr>
-                    <td><?php echo $rows['credit_card_name']; ?></td>
-                    <td><?php echo '<a href="' . $rows['URL'] . '">Credit Card Website</a>'; ?></td>
+                    <td style="text-align:left"><?php echo $rows['credit_card_name']; ?></td>
+                    <td style="text-align:center"><?php echo '<a href="' . $rows['URL'] . '">Credit Card Website</a>'; ?></td>
                   </tr>
                   <tr>
                     <td><?php print ""; ?></td>
@@ -222,10 +224,9 @@ $creditCard = '';
             }
           }
         }
-        ?>
-        </table>
-        		</div>
-            </div>
-      <?php  return $creditCardArray;
+      return $creditCardArray;
     }
- ?>
+  ?>
+    </table>
+        </div>
+        </div>
